@@ -1,0 +1,46 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master  # your default branch name
+
+# Add this permissions block
+permissions:
+  contents: write  # This is crucial for deploying to GitHub Pages
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      # Add this step to verify the build output directory
+      - name: List build output
+        run: |
+          echo "Contents of dist directory:"
+          ls -la dist/
+          echo "Full path to browser directory:"
+          find dist -name browser -type d
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/portfolio-latest/browser  # We'll verify this is correct
+          branch: gh-pages
+          token: ${{ github.token }}  # Use built-in token
+          clean: true
+          force: true

@@ -1,0 +1,37 @@
+/* Additional custom styles for enhanced hover effects */
+.group {
+    cursor: pointer;
+    will-change: transform;
+  }
+  
+  /* Smooth transform for better performance */
+  .group:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+  
+  /* Custom shadow animation */
+  .group:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Image zoom effect */
+  .group:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Technology tag hover effects */
+  .group:hover .tech-tag {
+    transform: translateY(-1px);
+  }
+  
+  /* Button hover animation */
+//   .group/button:hover svg {
+//     transform: translateX(4px);
+//   }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .group:hover {
+      transform: translateY(-4px) scale(1.01);
+    }
+  }
