@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master  # your default branch name
+      - main  # your default branch name
 
 # Add this permissions block
 permissions:
