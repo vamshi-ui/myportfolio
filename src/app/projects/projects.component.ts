@@ -64,27 +64,27 @@ export class ProjectsComponent {
       projectUrl: '',
       githubUrl: '',
     },
-    {
-      id: '4',
-      title: 'Taskboard Pro - Task Management Application',
-      description:
-        'Built and deployed a full-stack task management app with React, Next.js, Node.js, and MongoDB, hosted on AWS EC2. Features include authentication, task management, SSR/CSR, loading indicators, and toast notifications.',
-      image: 'taskboardpro.png',
-      technologies: [
-        { name: 'React', color: 'blue' },
-        { name: 'Next.js', color: 'gray' },
-        { name: 'Node.js', color: 'green' },
-        { name: 'MongoDB', color: 'green' },
-        { name: 'AWS EC2', color: 'orange' },
-        { name: 'Tailwind CSS', color: 'cyan' },
-        { name: 'React Prime', color: 'blue' },
-        { name: 'Full-Stack Development', color: 'purple' },
-        { name: 'SSR', color: 'yellow' },
-        { name: 'CSR', color: 'yellow' },
-      ],
-      projectUrl: 'https://taskboardpro.codebyvamshi.in/',
-      githubUrl: 'https://github.com/vamshi-ui/taskboardpro-ui',
-    },
+    // {
+    //   id: '4',
+    //   title: 'Taskboard Pro - Task Management Application',
+    //   description:
+    //     'Built and deployed a full-stack task management app with React, Next.js, Node.js, and MongoDB, hosted on AWS EC2. Features include authentication, task management, SSR/CSR, loading indicators, and toast notifications.',
+    //   image: 'taskboardpro.png',
+    //   technologies: [
+    //     { name: 'React', color: 'blue' },
+    //     { name: 'Next.js', color: 'gray' },
+    //     { name: 'Node.js', color: 'green' },
+    //     { name: 'MongoDB', color: 'green' },
+    //     { name: 'AWS EC2', color: 'orange' },
+    //     { name: 'Tailwind CSS', color: 'cyan' },
+    //     { name: 'React Prime', color: 'blue' },
+    //     { name: 'Full-Stack Development', color: 'purple' },
+    //     { name: 'SSR', color: 'yellow' },
+    //     { name: 'CSR', color: 'yellow' },
+    //   ],
+    //   projectUrl: 'https://taskboardpro.codebyvamshi.in/',
+    //   githubUrl: 'https://github.com/vamshi-ui/taskboardpro-ui',
+    // },
   ];
 
   ngOnInit() {}

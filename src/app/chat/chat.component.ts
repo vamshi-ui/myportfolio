@@ -52,7 +52,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   ]);
 
   ngOnInit() {
-    this.getMessages()
+    // this.getMessages()
     // Listen for global scroll events
     window.addEventListener('scroll', this.onGlobalScroll.bind(this));
   }
