@@ -10,11 +10,16 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { API_CONST } from '../constants/api.constant';
 import { CommonModule } from '@angular/common';
-import { SocialLinksComponent } from "../social-links/social-links.component";
-
+import { SocialLinksComponent } from '../social-links/social-links.component';
+import emailjs from '@emailjs/browser';
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule, FormsModule, CommonModule, SocialLinksComponent],
+  imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
+    SocialLinksComponent,
+  ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -22,8 +27,11 @@ export class ContactComponent {
   form!: FormGroup;
   loading = false;
   @ViewChildren('formInput') formInputs!: QueryList<ElementRef>;
-  
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+  ) {
     this.initializeForm();
   }
 
@@ -65,5 +73,32 @@ export class ContactComponent {
           this.loading = false;
         },
       });
+  }
+
+  sendEmail(form: any) {
+    const templateParams = {
+      name: this.form.value.name,
+      email: this.form.value.emailId,
+      phone: this.form.value.phone,
+      time: 'default',
+      message: this.form.value.message,
+    };
+    emailjs
+      .send(
+        'service_vqqinlu',
+        'template_0aj6ejb',
+        templateParams,
+        'PpAltRGfIbtoBKZtD',
+      )
+      .then(
+        () => {
+          alert('Message sent 🚀');
+          form.reset();
+        },
+        (error) => {
+          console.error(error);
+          alert('Failed ❌');
+        },
+      );
   }
 }
