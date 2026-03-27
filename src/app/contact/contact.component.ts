@@ -76,6 +76,7 @@ export class ContactComponent {
   }
 
   sendEmail(form: any) {
+    this.loading = true;
     const templateParams = {
       name: this.form.value.name,
       email: this.form.value.emailId,
@@ -94,10 +95,12 @@ export class ContactComponent {
         () => {
           alert('Message sent 🚀');
           form.reset();
+          this.loading = false;
         },
         (error) => {
           console.error(error);
           alert('Failed ❌');
+          this.loading = false;
         },
       );
   }
