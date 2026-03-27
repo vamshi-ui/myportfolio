@@ -37,7 +37,7 @@ export class HeroComponent {
 
   downloadResume(): void {
     window.open(
-      'https://drive.google.com/uc?export=download&id=1CM0hGE_ubS3W7FAedFBq2CMInOps6Ecn',
+      'https://drive.google.com/uc?export=download&id=1Zd8IXC_l2JP081J_CsiQYVYzCas-0WZ3',
       '_blank'
     );
   }
