@@ -20,7 +20,7 @@
             "outputPath": "dist/portfolio-latest",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "baseHref": "/myportfolio/",
+            "baseHref": "/",
             "polyfills": [
               "zone.js"
             ],
