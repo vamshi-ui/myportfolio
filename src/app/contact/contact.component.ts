@@ -95,7 +95,6 @@ export class ContactComponent {
       name: this.form.value.name,
       email: this.form.value.emailId,
       phone: this.form.value.phone,
-      time: 'default',
       message: this.form.value.message,
     };
     emailjs
