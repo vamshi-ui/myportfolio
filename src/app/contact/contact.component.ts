@@ -76,6 +76,20 @@ export class ContactComponent {
   }
 
   sendEmail(form: any) {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      this.formInputs.forEach((input) => {
+        const controlName = input.nativeElement.getAttribute('formControlName');
+        if (controlName && this.form.get(controlName)?.invalid) {
+          input.nativeElement.classList.add('my-shake');
+          setTimeout(() => {
+            input.nativeElement.classList.remove('my-shake');
+          }, 500);
+        }
+      });
+      return;
+    }
+
     this.loading = true;
     const templateParams = {
       name: this.form.value.name,
